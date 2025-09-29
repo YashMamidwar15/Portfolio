@@ -1,7 +1,4 @@
-<<<<<<< HEAD
-=======
 /* Reset and Base Styles */
->>>>>>> 73ac645 (Initial commit on my portfolio)
 * {
     margin: 0;
     padding: 0;
@@ -136,6 +133,7 @@ nav ul li a:hover {
     display: flex;
     align-items: center;
     justify-content: space-between;
+    flex-wrap: wrap;
 }
 
 .hero-content h1 {
@@ -165,19 +163,27 @@ nav ul li a:hover {
 
 .hero-image {
     flex-shrink: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .image-placeholder {
-    width: 300px;
-    height: 300px;
-    background: rgba(255, 255, 255, 0.1);
-    border-radius: 50%;
+    width: 250px;          /* reduced size */
+    height: 250px;         /* reduced size */
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 8rem;
-    color: rgba(255, 255, 255, 0.3);
-    border: 5px solid rgba(255, 255, 255, 0.2);
+    border-radius: 50%;
+    overflow: hidden;      /* ensures image stays inside circle */
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+}
+
+.image-placeholder .yash-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;      /* ensures image scales properly */
+    border-radius: 50%;     /* keeps it circular */
 }
 
 /* About Section */
@@ -271,35 +277,12 @@ nav ul li a:hover {
     font-weight: 600;
 }
 
-.html {
-    width: 90%;
-    background: #3498db;
-}
-
-.js {
-    width: 85%;
-    background: #f1c40f;
-}
-
-.react {
-    width: 75%;
-    background: #e74c3c;
-}
-
-.uiux {
-    width: 80%;
-    background: #9b59b6;
-}
-
-.python {
-    width: 70%;
-    background: #2ecc71;
-}
-
-.git {
-    width: 85%;
-    background: #34495e;
-}
+.html { width: 90%; background: #3498db; }
+.js { width: 85%; background: #f1c40f; }
+.react { width: 75%; background: #e74c3c; }
+.uiux { width: 80%; background: #9b59b6; }
+.python { width: 70%; background: #2ecc71; }
+.git { width: 85%; background: #34495e; }
 
 /* Projects Section */
 .projects-grid {
@@ -527,9 +510,9 @@ footer {
     }
     
     .image-placeholder {
-        width: 200px;
-        height: 200px;
-        font-size: 5rem;
+        width: 180px;
+        height: 180px;
+        font-size: 4rem;
     }
     
     .projects-grid {
